@@ -43,9 +43,12 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Registration and authentication of users
+- Automatic recipe search and selection
+- Ability to filter search by type of meal and prep time 
+- Ability to select a recipe to use
+- Notifications of selections from other users
+- Persistent storage of favorite recipes
 
 ### Technologies
 
