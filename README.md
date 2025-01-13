@@ -32,15 +32,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ![Design image](RecipeWebsite.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
-
 ### Key features
 
 - Registration and authentication of users
@@ -54,12 +45,16 @@ sequenceDiagram
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Uses HTML to structure the application. Uses three HTML pages. One for selecting preferences. One to display search results. One to show favorite recipes. 
+- **CSS** - Responsive styling to look good on any size screen. Good color choices and whitespace.
+- **React** - Provides login, selection of preferences, display of notifications.
+- **Service** - Backend sevice with endpoints for:
+    - login/logout
+    - retrieving list of favorite recipes
+    - adding new favorites
+    - external call to get recipes based on preferences   
+- **DB/Login** - Store favorites, and recipes in database. Register and login users. Store user credentials securely.
+- **WebSocket** - As users add recipes to favorites and use recipes, notifications are broadcast to all users. 
 
 ## 🚀 AWS deliverable
 
