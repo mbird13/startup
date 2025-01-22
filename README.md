@@ -63,11 +63,11 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **HTML pages** - Three html pages. index.html (Login page), home.html, and favorites.html
+- [x] **HTML pages** - Four html pages. index.html (Login page), home.html, and favorites.html, results.html.
 - [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
 - [x] **Links** - Navigation bar with links between each html page. Additional link to github.
 - [x] **Text** - Favorites page contains text.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
+- [x] **3rd party API placeholder** - Results page will display external API results.
 - [ ] **Images** - I did not complete this part of the deliverable.
 - [ ] **Login placeholder** - I did not complete this part of the deliverable.
 - [ ] **DB data placeholder** - I did not complete this part of the deliverable.
