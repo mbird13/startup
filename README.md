@@ -66,7 +66,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **HTML pages** - Three html pages. index.html (Login page), home.html, and favorites.html
 - [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
 - [x] **Links** - Navigation bar with links between each html page. Additional link to github.
-- [ ] **Text** - I did not complete this part of the deliverable.
+- [x] **Text** - Favorites page contains text.
 - [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
 - [ ] **Images** - I did not complete this part of the deliverable.
 - [ ] **Login placeholder** - I did not complete this part of the deliverable.
