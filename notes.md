@@ -1,6 +1,6 @@
 # CS 260 Notes
 
-[My startup](https://simon.cs260.click)
+[My startup](https://startup.findmymeal.click)
 
 ## Helpful links
 
@@ -10,8 +10,8 @@
 
 ## AWS Notes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+I learned how to deploy a server and make it accessible through a custom domain. I researched the steps involved in deploying a server, configuring DNS settings, and linking it to a custom domain name. This involved setting up hosting, ensuring the server was running correctly, and testing that the domain pointed to the correct location. 
 
 ## HTML Notes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To complete this assignment, I needed to learn how to structure and build multiple HTML pages with proper elements and functionality. I familiarized myself with key HTML tags like title, header, nav, form, input, button, and footer to ensure each page had the right layout and interactive components. I also had to learn how to create navigation links to connect the pages and add external links, such as one to GitHub. I also explored how to incorporate a 3rd party API, including what options I had for which API to use, and how to integrate images into the pages.
