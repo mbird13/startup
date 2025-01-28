@@ -15,3 +15,11 @@ I learned how to deploy a server and make it accessible through a custom domain.
 ## HTML Notes
 
 To complete this assignment, I needed to learn how to structure and build multiple HTML pages with proper elements and functionality. I familiarized myself with key HTML tags like title, header, nav, form, input, button, and footer to ensure each page had the right layout and interactive components. I also had to learn how to create navigation links to connect the pages and add external links, such as one to GitHub. I also explored how to incorporate a 3rd party API, including what options I had for which API to use, and how to integrate images into the pages.
+
+## CSS Notes
+
+Viewport meta tag
+Float
+Display type: none, block, inline, flex, grid
+Flex: (grow) (shrink) (basis)
+@media tag: based on a trigger, applies different css rules
