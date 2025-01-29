@@ -1,57 +1,55 @@
 <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Find My Meal</title>
+    </head>
 
-<head>
-    <title>Find My Meal</title>
-</head>
+    <body>
 
-<body>
+        <header>
+            <h1>Find My Meal</h1>
+            <nav>
+            <menu>
+                <li><a href="index.html">Username</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </menu>
+        </nav>
+        <hr />
+        </header>
 
-<header>
-    <h1>Find My Meal</h1>
-    <nav>
-    <menu>
-        <li><a href="index.html">Username</a></li>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="favorites.html">Favorites</a></li>
-    </menu>
-</nav>
-<hr />
-</header>
+        <main>
+        <div>
+            <h2>What's your next meal?</h2>
+            <form method="get" action="results.html">
+                <label><input type="radio" name="meal" value="Breakfast">Breakfast</label>
+                <label><input type="radio" name="meal" value="Lunch">Lunch</label>
+                <label><input type="radio" name="meal" value="Dinner">Dinner</label>    
+                <br />
+                <h3>How much time do you have?</h3>
+                <label><input type="number" />minutes</label>
+                <br />
+                <button type="submit">Search</button>
 
-<main>
-<div>
-    <h2>What's your next meal?</h2>
-    <form method="get" action="results.html">
-        <label><input type="radio" name="meal" value="Breakfast">Breakfast</label>
-        <label><input type="radio" name="meal" value="Lunch">Lunch</label>
-        <label><input type="radio" name="meal" value="Dinner">Dinner</label>    
-        <br />
-        <h3>How much time do you have?</h3>
-        <label><input type="number" />minutes</label>
-        <br />
-        <button type="submit">Search</button>
+            </form>
+        </div>
 
-    </form>
-</div>
+        <hr />
+        <div>
+            <h2>Notifications</h2>
+            <ul>
+                <li>Claire is eating Miso Ramen today!</li>
+                <li>James favorited Drunken Noodles</li>
+                <li>Jimmy is eating Parmesan Chicken today!</li>
+            </ul>
+        </div>
+        </main>
 
-<hr />
-<div>
-    <h2>Notifications</h2>
-    <ul>
-        <li>Claire is eating Miso Ramen today!</li>
-        <li>James favorited Drunken Noodles</li>
-        <li>Jimmy is eating Parmesan Chicken today!</li>
-    </ul>
-</div>
-</main>
-
-<footer>
-    <hr />
-    <span class="text-reset">Mark Bird</span>
-    <br />
-    <a href="https://github.com/mbird13/startup">GitHub</a>
-  </footer>
-</body>
+        <footer>
+            <hr />
+            <span class="text-reset">Mark Bird</span>
+            <br />
+            <a href="https://github.com/mbird13/startup">GitHub</a>
+        </footer>
+    </body>
 </html>
-
-</body>

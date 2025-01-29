@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+
+}
+
+header {
+    background-color: cadetblue;
+    margin: 0;
+}
+
+.navigation {
+    display:flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+li {
+    margin: 5px;
+    padding: 5px;
+}    
+
+main {
+
+}
+
+footer {
+
+}
