@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
+
 * {
     margin: 0;
+    font-family: Roboto, sans-serif;
 }
 
 body {
     display:flex;
     flex-direction: column;
-
+    background-color: lightblue;
+    height: 100vh;
 }
 
 header {
-    background-color: cadetblue;
+    background-color: rgb(51, 128, 130);
     margin: 0;
 }
 
@@ -19,15 +24,61 @@ header {
     padding: 0;
 }
 
+.navigation li {
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation a:hover {
+    color: lightblue;
+}
+
+.navigation a:active {
+    color: darkblue;
+}
+
+.navigation a:visited {
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 500px;
+    background-color: lightblue;
+}
+
+h1 {
+    font-family: 'Playwrite IN', sans-serif;
+    font-size: 3em;
+    color: darkblue;
+    align-self: center;
+}
+
+footer {
+    background-color: rgb(51, 128, 130);    
+    margin: 0;
+    justify-self: end;
+    flex: 0 1 70px;
+}
+
 li {
     margin: 5px;
     padding: 5px;
 }    
 
-main {
-
-}
-
-footer {
-
+hr {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: .5em;
+    border-style: inset;
+    border-width: 5px;
+    border-color: gray;
 }
