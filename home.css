@@ -1,0 +1,61 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px;
+    align-items: flex-start;
+}
+
+main .input-form {
+    padding: 20px;
+    flex: 1;
+    margin-right: 20px;
+}
+
+main hr {
+    flex: 0 0 0px;
+    height: 100%;
+}
+
+main .notifications-bar {
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-left: 5px inset gray;
+    flex: 0 .1 200px;
+}
+
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
+    }
+
+    main .input-form {
+        margin-right: 0;
+        flex: 1 1 200px;
+    }
+
+    main .notifications-bar {
+        border-left: none;
+        border-top: 5px inset gray;
+        width: 100%;
+        flex: 0 1 100px;
+    }
+    
+}
+
+@media (max-height: 700px) {
+    main {
+        flex-direction: column;
+    }
+
+    main .input-form {
+        margin-right: 0;
+    }
+
+    main .notifications-bar {
+        display: none;
+    }
+    
+}
