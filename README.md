@@ -61,7 +61,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Proper HTML element usage** - I used title, header, nav, menu, main, form, input, button, a, img, ul, footer and more. 
 - [x] **Links** - Navigation bar with links between each html page. Additional link to github.
 - [x] **Text** - Favorites page contains text.
-- [x] **3rd party API placeholder** - Results page will display external API results.
+- [x] **3rd party API placeholder** - Results page has placeholder image and text for external API results from https://rapidapi.com/apidojo/api/tasty/pricing.
 - [x] **Images** - Images on favorites and results page.
 - [x] **Login placeholder** - Placeholder for auth on Login page.
 - [x] **DB data placeholder** - Favorite recipes on favorites.html.
