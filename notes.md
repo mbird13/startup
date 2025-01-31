@@ -18,8 +18,10 @@ To complete this assignment, I needed to learn how to structure and build multip
 
 ## CSS Notes
 
-Viewport meta tag
-Float
-Display type: none, block, inline, flex, grid
+I learned how to style and format a webpage using CSS to achieve a polished and responsive design. I learned about how to style the header, footer, and main content elements, changing background colors and adjusting borders to improve the layout. For the navigation elements, I learned how to remove default styling from list items and add hover effects. I also explored how to make the webpage responsive by adjusting font sizes and page layout using CSS media queries to accommodate different window sizes. To improve the look of form elements and buttons, I learned how to work with the flex display mode.
+
+For consistency across the pages, I imported external fonts to achieve a uniform look and updated the color of various text elements for better contrast and readability. Additionally, I worked on styling images by adjusting their sizes for different screen sizes and rounding their edges.
+Viewport meta tag: used to tell the browser not to zoom in the content for small screens
+Display types: none, block, inline, flex, grid
 Flex: (grow) (shrink) (basis)
-@media tag: based on a trigger, applies different css rules
+@media tag: applies different css rules based on a trigger
