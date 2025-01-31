@@ -92,6 +92,32 @@ hr {
     height: 100%;
 }
 
+button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    flex: 0 0 30px;
+}
+
+button:hover {
+    border-color: black;
+    background-color: lightblue;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+img {
+    margin: 10px;
+    max-width: 70%; 
+    max-height: 500px;
+    height: auto; 
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 10vw;
