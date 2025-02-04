@@ -26,3 +26,8 @@ Viewport meta tag: used to tell the browser not to zoom in the content for small
 Display types: none, block, inline, flex, grid  
 Flex: (grow) (shrink) (basis)  
 @media tag: applies different css rules based on a trigger  
+
+
+## REACT Notes
+
+BrowserRouter imported from React: uses NavLink components to swap which components are rendered on the page. The different components that can be rendered are defined with Route components.
