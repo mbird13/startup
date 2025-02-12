@@ -1,46 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Tell browsers not to scale the viewport automatically -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
 
-        <title>Find My Meal</title>
-
-        <link rel="stylesheet" href="main.css" />
-    </head>
-
-    <body>
-
-        <header>
-            <nav>
-                <menu class="navigation">
-                    <li><a href="index.html">Login</a></li>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
-                </menu>
-            </nav>
-        </header>
-
-        <hr />
-
-        <h1>Find My Meal</h1>
-
-        <main>
-            <div class="input-form">
-            <h2>Login</h2>
-            <form method="get" action="home.html">
-                <input type="text" placeholder="Email" />
-                <input type="password" placeholder="password" />
-                <button type="submit">Submit</button>
-            </form>
-            </div>
-        </main>
-
-        <footer>
-            <hr />
-            <span class="text-reset">Mark Bird</span>
-            <br />
-            <a href="https://github.com/mbird13/startup">GitHub</a>
-        </footer>
-    </body>
+    <title>Find My Meal</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
+  </body>
 </html>
