@@ -1,26 +1,44 @@
 import React from 'react';
+import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
+import { Login }from './login/login.jsx';
+import { Home } from './home/home.jsx';
+import { Favorites } from './favorites/favorites.jsx';
 import './main.css';
 
 export default function App() {
-  return <div className="body">
-    <header>
-            <nav>
-                <menu class="navigation">
-                    <li><a href="index.html">Login</a></li>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
-                </menu>
-            </nav>
-            <hr />
-        </header>
-        <div>
-            Home
+  return (
+    <BrowserRouter>
+        <div className="body">
+            <header>
+                    <nav>
+                        <menu className="navigation">
+                            <li><NavLink to="/">Login</NavLink></li>
+                            <li><NavLink to="/home">Home</NavLink></li>
+                            <li><NavLink to="/favorites">Favorites</NavLink></li>
+                        </menu>
+                    </nav>
+                    <hr />
+                </header>
+                
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/favorites" element={<Favorites />} />
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
+
+
+                <footer>
+                    <hr />
+                    <span className="text-reset">Mark Bird</span>
+                    <br />
+                    <a href="https://github.com/mbird13/startup">GitHub</a>
+                </footer>
         </div>
-        <footer>
-            <hr />
-            <span class="text-reset">Mark Bird</span>
-            <br />
-            <a href="https://github.com/mbird13/startup">GitHub</a>
-        </footer>
-  </div>;
+    </BrowserRouter>
+  );
 }
+
+function NotFound() {
+    return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  }
