@@ -3,6 +3,7 @@ import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
 import { Login }from './login/login.jsx';
 import { Home } from './home/home.jsx';
 import { Favorites } from './favorites/favorites.jsx';
+import { Results } from './results/results.jsx';
 import './main.css';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
                     <Route path="/" element={<Login />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/favorites" element={<Favorites />} />
+                    <Route path="/results" element={<Results />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
 
