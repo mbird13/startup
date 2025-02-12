@@ -3,7 +3,7 @@ import './favorites.css';
 
 export function Favorites() {
     return (
-        <main>
+        <main className="favorites_main">
             <h2>My Favorite Recipes</h2>
             <img alt="Plate of Drunken Noodles" src="drunkennoodles.jpg" />
             <h3>Drunken Noodles</h3>

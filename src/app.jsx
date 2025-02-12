@@ -10,6 +10,7 @@ export default function App() {
     <BrowserRouter>
         <div className="body">
             <header>
+            <   h1>Find My Meal</h1>
                     <nav>
                         <menu className="navigation">
                             <li><NavLink to="/">Login</NavLink></li>

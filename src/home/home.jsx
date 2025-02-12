@@ -3,9 +3,9 @@ import './home.css';
 
 export function Home() {    
     return (
-        <main>
+        <main className="home_main">
         <div>
-            <form method="get" action="results.html" class="input-form">
+            <form method="get" action="results" className="input-form">
                 <h2>What's your next meal?</h2>
                 <label><input type="radio" name="meal" value="Breakfast" />Breakfast</label>
                 <label><input type="radio" name="meal" value="Lunch" />Lunch</label>
@@ -19,7 +19,7 @@ export function Home() {
             </form>
         </div>
 
-        <div class="notifications-bar">
+        <div className="notifications-bar">
             <h2>Notifications</h2>
             <ul>
                 <li>Claire is eating Miso Ramen today!</li>

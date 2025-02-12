@@ -1,4 +1,4 @@
-main {
+.home_main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -6,7 +6,7 @@ main {
     align-items: flex-start;
 }
 
-main .input-form {
+.home_main .input-form {
     padding: 20px;
     flex: 1;
     margin-right: 20px;
@@ -17,11 +17,11 @@ main .input-form {
     height: 70%;
 }
 
-main .input-form label {
+.home_main .input-form label {
     font-size: 1em;
 }
 
-main .input-form input {
+.home_main .input-form input {
     padding: 10px;
     margin: 5px;
     border: 1px solid gray;
@@ -30,7 +30,7 @@ main .input-form input {
 
 }
 
-main .input-form button {
+.home_main .input-form button {
     padding: 10px;
     margin: 5px;
     border: 1px solid gray;
@@ -40,17 +40,17 @@ main .input-form button {
     flex: 0 0 30px;
 }
 
-main .input-form button:hover {
+.home_main .input-form button:hover {
     border-color: black;
     background-color: lightblue;
 }
 
-main hr {
+.home_main hr {
     flex: 0 0 0px;
     height: 100%;
 }
 
-main .notifications-bar {
+.home_main .notifications-bar {
     width: 300px;
     height: 100%;
     background-color: #f4f4f4;
@@ -60,47 +60,47 @@ main .notifications-bar {
 }
 
 @media (max-width: 700px) {
-    main {
+    .home_main {
         flex-direction: column;
     }
 
-    main .input-form {
+    .home_main .input-form {
         margin-right: 0;
         flex: 1 1 200px;
     }
 
-    main .notifications-bar {
+    .home_main .notifications-bar {
         border-left: none;
         border-top: 5px inset gray;
         width: 100%;
         flex: 0 1 100px;
     }
 
-    main .input-form label {
+    .home_main .input-form label {
         font-size: 4vw;
         align-self: start;
     }
 
-    main .input-form h2 {
+    .home_main .input-form h2 {
         font-size: 4vw;
     }
 
-    main .input-form label {
+    .home_main .input-form label {
         font-size: 3vw;
     }
     
 }
 
 @media (max-height: 700px) {
-    main {
+    .home_main {
         flex-direction: column;
     }
 
-    main .input-form {
+    .home_main .input-form {
         margin-right: 0;
     }
 
-    main .notifications-bar {
+    .home_main .notifications-bar {
         display: none;
     }
     
