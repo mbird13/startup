@@ -82,9 +82,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - Routing between login and voting components.
+- [x] **Bundled using Vite** 
+- [x] **Components** - I brough the code over from html files. Changed html class to React className I also had to change some css to work with the way styles overlap in react.
+- [x] **Router** - Routing between login, home, favorites, and results components. Results is still only accessible by hitting search on the home page. 
 
 ## 🚀 React part 2: Reactivity
 
