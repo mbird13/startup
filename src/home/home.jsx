@@ -36,17 +36,25 @@ export function Home() {
         return messageArray;
       }
 
+      const [mealType, setMealType] = React.useEffect('');
+      const [allergies, setAllergies] = React.useEffect([]);
+
     return (
         <main className="home_main">
         <div>
             <form method="get" action="results" className="input-form">
                 <h2>What's your next meal?</h2>
-                <label><input type="radio" name="meal" value="Breakfast" />Breakfast</label>
-                <label><input type="radio" name="meal" value="Lunch" />Lunch</label>
-                <label><input type="radio" name="meal" value="Dinner" />Dinner</label>    
+                    <label><input type="radio" name="meal" value="Breakfast" />Breakfast</label>
+                    <label><input type="radio" name="meal" value="Dinner" />Dinner/Lunch</label>
+                    <label><input type="radio" name="meal" value="Dessert" />Dessert</label>  
+                    <label><input type="radio" name="meal" value="Vegan" />Vegan</label>
+                    <label><input type="radio" name="meal" value="Vegetarian" />Vegetarian</label>  
                 <br />
-                <h2>How much time do you have?</h2>
-                <label><input type="number" />minutes</label>
+                <h2>Select Allegies</h2>
+                    <label><input type="checkbox" name="preference" value="NoSeafood" />Allergic to Seafood</label>
+                    <label><input type="checkbox" name="preference" value="NoNuts" />Allergic to Nuts</label>
+                    <label><input type="checkbox" name="preference" value="NoEgg" />Allergic to Eggs</label>
+                <br />
                 <br />
                 <button type="submit">Search</button>
 
