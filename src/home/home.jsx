@@ -1,5 +1,7 @@
 import React from "react";
-import { Notification, MyNotifier } from "./Notifier";
+import { MyNotifier } from "./Notifier";
+import { useNavigate } from 'react-router-dom';
+
 import './home.css';
 
 export function Home() {  
@@ -36,27 +38,61 @@ export function Home() {
         return messageArray;
       }
 
-      const [mealType, setMealType] = React.useEffect('');
-      const [allergies, setAllergies] = React.useEffect([]);
+      const [mealType, setMealType] = React.useState('');
+      const [allergies, setAllergies] = React.useState([]);
+
+      const handleCheckboxChange = (event) => {
+        const { value, checked } = event.target;
+    
+        setAllergies((prevAllergies) =>
+          checked
+            ? [...prevAllergies, value] // Add allergy if checked
+            : prevAllergies.filter((allergy) => allergy !== value) // Remove allergy if unchecked
+        );
+      };
 
     return (
         <main className="home_main">
         <div>
             <form method="get" action="results" className="input-form">
                 <h2>What's your next meal?</h2>
-                    <label><input type="radio" name="meal" value="Breakfast" />Breakfast</label>
-                    <label><input type="radio" name="meal" value="Dinner" />Dinner/Lunch</label>
-                    <label><input type="radio" name="meal" value="Dessert" />Dessert</label>  
-                    <label><input type="radio" name="meal" value="Vegan" />Vegan</label>
-                    <label><input type="radio" name="meal" value="Vegetarian" />Vegetarian</label>  
+                    <label><input type="radio" name="meal" value="Breakfast" onChange={(e) => setMealType(e.target.value)}/>Breakfast</label>
+                    <label><input type="radio" name="meal" value="Dinner" onChange={(e) => setMealType(e.target.value)}/>Dinner/Lunch</label>
+                    <label><input type="radio" name="meal" value="Dessert" onChange={(e) => setMealType(e.target.value)}/>Dessert</label>  
+                    <label><input type="radio" name="meal" value="Vegan" onChange={(e) => setMealType(e.target.value)}/>Vegan</label>
+                    <label><input type="radio" name="meal" value="Vegetarian" onChange={(e) => setMealType(e.target.value)}/>Vegetarian</label>  
                 <br />
                 <h2>Select Allegies</h2>
-                    <label><input type="checkbox" name="preference" value="NoSeafood" />Allergic to Seafood</label>
-                    <label><input type="checkbox" name="preference" value="NoNuts" />Allergic to Nuts</label>
-                    <label><input type="checkbox" name="preference" value="NoEgg" />Allergic to Eggs</label>
+                    <label>
+                        <input
+                        type="checkbox"
+                        value="NoSeafood"
+                        checked={allergies.includes("NoSeafood")}
+                        onChange={handleCheckboxChange}
+                        />
+                        Allergic to Seafood
+                    </label>
+                    <label>
+                        <input
+                        type="checkbox"
+                        value="NoNuts"
+                        checked={allergies.includes("NoNuts")}
+                        onChange={handleCheckboxChange}
+                        />
+                        Allergic to Nuts
+                    </label>
+                    <label>
+                        <input
+                        type="checkbox"
+                        value="NoEgg"
+                        checked={allergies.includes("NoEgg")}
+                        onChange={handleCheckboxChange}
+                        />
+                        Allergic to Eggs
+                    </label>
                 <br />
                 <br />
-                <button type="submit">Search</button>
+                <button onClick={() => useNavidate('/results')}>Search</button>
 
             </form>
         </div>

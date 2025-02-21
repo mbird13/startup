@@ -38,4 +38,4 @@ class Notifier {
 }
 
 const MyNotifier = new Notifier();
-export { Notification, MyNotifier };
+export { MyNotifier };
