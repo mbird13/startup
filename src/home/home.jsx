@@ -1,7 +1,41 @@
 import React from "react";
+import { Notification, MyNotifier } from "./Notifier";
 import './home.css';
 
-export function Home() {    
+export function Home() {  
+    
+    const [notifications, setNotifications] = React.useState([]);
+
+    React.useEffect(() => {
+        MyNotifier.addHandler(handleNotification);
+    
+        return () => {
+          MyNotifier.removeHandler(handleNotification);
+        };
+      }, []);
+
+      function handleNotification(notification) {
+        setNotifications((prevNotifications) => {
+          let newNotifications = [notification, ...prevNotifications];
+          if (newNotifications.length > 6) {
+            newNotifications = newNotifications.slice(1, 3);
+          }
+          return newNotifications;
+        });
+      }
+
+      function createMessageArray() {
+        const messageArray = [];
+        for (const [i, event] of notifications.entries()) {
+          let message = `favorited ${event.value}`;
+    
+          messageArray.push(
+            <li>{event.from.split('@')[0]} {message}</li>
+          );
+        }
+        return messageArray;
+      }
+
     return (
         <main className="home_main">
         <div>
@@ -22,9 +56,7 @@ export function Home() {
         <div className="notifications-bar">
             <h2>Notifications</h2>
             <ul>
-                <li>Claire is eating Miso Ramen today!</li>
-                <li>James favorited Drunken Noodles</li>
-                <li>Jimmy is eating Parmesan Chicken today!</li>
+                {createMessageArray()}
             </ul>
         </div>
         </main>
