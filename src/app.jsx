@@ -4,9 +4,14 @@ import { Login }from './login/login.jsx';
 import { Home } from './home/home.jsx';
 import { Favorites } from './favorites/favorites.jsx';
 import { Results } from './results/results.jsx';
+import { AuthState } from './login/AuthState.js';
 import './main.css';
 
 export default function App() {
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+  const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+  const [authState, setAuthState] = React.useState(currentAuthState);
+
   return (
     <BrowserRouter>
         <div className="body">
@@ -23,7 +28,16 @@ export default function App() {
                 </header>
                 
                 <Routes>
-                    <Route path="/" element={<Login />} />
+                    <Route path="/" element={
+                        <Login 
+                            userName={userName} 
+                            authState={authState} 
+                            onAuthChange={(userName, authState) => {
+                                setAuthState(authState);
+                                setUserName(userName);
+                            }}
+                        />} 
+                    />
                     <Route path="/home" element={<Home />} />
                     <Route path="/favorites" element={<Favorites />} />
                     <Route path="/results" element={<Results />} />
