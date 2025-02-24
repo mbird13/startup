@@ -51,6 +51,11 @@ export function Home() {
         );
       };
 
+      function searchForRecipe() {
+
+        useNavidate('/results', { state: { meal: {mealType}, allergies: {allergies} } })
+      }
+
     return (
         <main className="home_main">
         <div>
@@ -92,7 +97,7 @@ export function Home() {
                     </label>
                 <br />
                 <br />
-                <button onClick={() => useNavidate('/results')}>Search</button>
+                <button onClick={() => searchForRecipe()}>Search</button>
 
             </form>
         </div>
