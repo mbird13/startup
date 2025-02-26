@@ -7,6 +7,7 @@ import './home.css';
 export function Home() {  
     
     const [notifications, setNotifications] = React.useState([]);
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         MyNotifier.addHandler(handleNotification);
@@ -52,14 +53,17 @@ export function Home() {
       };
 
       function searchForRecipe() {
-
-        useNavidate('/results', { state: { meal: {mealType}, allergies: {allergies} } })
+        if (mealType === '') {
+          alert("Please select a meal type");
+          return;
+        }
+        navigate("/results?meal={mealType}&allergies={allergies}")
       }
 
     return (
         <main className="home_main">
         <div>
-            <form method="get" action="results" className="input-form">
+            <form method="get" className="input-form">
                 <h2>What's your next meal?</h2>
                     <label><input type="radio" name="meal" value="Breakfast" onChange={(e) => setMealType(e.target.value)}/>Breakfast</label>
                     <label><input type="radio" name="meal" value="Dinner" onChange={(e) => setMealType(e.target.value)}/>Dinner/Lunch</label>
