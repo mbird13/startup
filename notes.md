@@ -33,3 +33,10 @@ Flex: (grow) (shrink) (basis)
 I learned how to port an existing project to React. I had to adapt the HTML and CSS components to fit with React. This included changing HTML classes to classNames and adding more specificity to my CSS. I also had to set up Vite and React and reorganize the application to match Vite's expected pattern. I created a React router to manage different components and converted the HTML files into React components with appropriate CSS references.
 BrowserRouter imported from React: uses NavLink components to swap which components are rendered on the page. The different components that can be rendered are defined with Route components.  
 
+
+## REACT Notes
+I learned how to implement reactivity in React. Throughout this process, I used React Router to structure the application's navigation while managing state dynamically with useState and useEffect. Additionally, I integrated mocked solutions, such as simulating WebSocket messages or using LocalStorage, to create a functional prototype.   
+
+useNavigate(): can navigate to a given path within a function.   
+searchParams(): can use parameters in the url path to pass information from one page to another.
+
