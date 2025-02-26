@@ -1,8 +1,10 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 import './results.css';
+import { useNavigate } from 'react-router-dom';
 
 export function Results() {
+    const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const meal = searchParams.get("meal");
     const allergyList = searchParams.get("allergies");
@@ -34,6 +36,14 @@ export function Results() {
             setInstructions("1) Preheat oven to 180 degrees celcius. \r\n2) Boil vegetables for 5-7 minutes, until soft. Add lentils and bring to a gentle simmer, adding a stock cube if desired. Continue cooking and stirring until the lentils are soft, which should take about 20 minutes. \r\n3) Blanch spinach leaves for a few minutes in a pan, before removing and setting aside. \r\n4) Top up the pan with water and cook the lasagne sheets. When cooked, drain and set aside.\r\n5) To make the sauce, melt the butter and add the flour, then gradually add the soya milk along with the mustard and the vinegar. Cook and stir until smooth and then assemble the lasagne as desired in a baking dish. \r\n6) Bake in the preheated oven for about 25 minutes.",);
         }
     }, []);
+
+    function addToFavorites() {
+        const json = localStorage.getItem("favorites") || "[]";
+        const currentFavorites = JSON.parse(json);
+        const recipe = { name: recipeName, image: imgUrl, instructions: instructions };
+        localStorage.setItem("favorites", JSON.stringify([...currentFavorites, recipe]));
+        navigate("/favorites");
+    }
     
     return (
         <main className="results_main">
@@ -41,8 +51,8 @@ export function Results() {
             <img alt={recipeName} src={imgUrl} />
             <h3>{recipeName}</h3>
             <p>{instructions}</p>
-            <form action="favorites" method="get">
-                <button type="submit">Add to favorites</button>
+            <form>
+                <button onClick={() => addToFavorites()}>Add to favorites</button>
             </form>
         </main>
     );

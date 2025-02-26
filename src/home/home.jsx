@@ -71,7 +71,7 @@ export function Home() {
                     <label><input type="radio" name="meal" value="Vegan" onChange={(e) => setMealType(e.target.value)}/>Vegan</label>
                     <label><input type="radio" name="meal" value="Vegetarian" onChange={(e) => setMealType(e.target.value)}/>Vegetarian</label>  
                 <br />
-                <h2>Select Allegies</h2>
+                {/* <h2>Select Allegies</h2>
                     <label>
                         <input
                         type="checkbox"
@@ -98,7 +98,7 @@ export function Home() {
                         onChange={handleCheckboxChange}
                         />
                         Allergic to Eggs
-                    </label>
+                    </label> */}
                 <br />
                 <br />
                 <button onClick={() => searchForRecipe()}>Search</button>
