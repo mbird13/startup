@@ -1,15 +1,14 @@
-import express from 'express';
-import bcrypt from 'bcrypt';
-import uuid from 'uuid';
-import cookieParser from 'cookie-parser';
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcryptjs');
+const express = require('express');
+const uuid = require('uuid');
+const app = express();
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 const authCookieName = 'token';
 
 let users = [];
 let favoriteRecipes = [];
-
-app = express();
 
 app.use(express.json());
 
@@ -55,12 +54,12 @@ res.status(401).send({ msg: 'Unauthorized' });
 });
 
 apiRouter.delete('/auth/logout', async (req, res) => {
-const user = await findUser('token', req.cookies[authCookieName]);
-if (user) {
-    delete user.token;
-}
-res.clearCookie(authCookieName);
-res.status(204).end();
+    const user = await findUser('token', req.cookies[authCookieName]);
+    if (user) {
+        delete user.token;
+    }
+    res.clearCookie(authCookieName);
+    res.status(204).end();
 }); 
 
 apiRouter.get('/recipes', verifyAuth, (_req, res) => {
