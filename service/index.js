@@ -62,19 +62,26 @@ apiRouter.delete('/auth/logout', async (req, res) => {
     res.status(204).end();
 }); 
 
-apiRouter.get('/recipes', verifyAuth, (_req, res) => {
-
-    res.send(favoriteRecipes[req.body.userId] || []);
+apiRouter.get('/recipes', verifyAuth, async (req, res) => {
+    const user = await findUser('token', req.cookies[authCookieName]);
+    res.send(favoriteRecipes[user.email] || []);
 });
 
 apiRouter.post('/recipe', verifyAuth, (req, res) => {
     //add a recipe to the user's favorites
-    let newRecipe = { name: req.body.name, image: req.body.image, instructions: req.body.instructions };
+    let newRecipe = { userId: req.body.userId, name: req.body.name, image: req.body.image, instructions: req.body.instructions };
     currentFavorites = favoriteRecipes[req.body.userId] || [];
     currentFavorites.push(newRecipe);
     favoriteRecipes[req.body.userId] = currentFavorites;
     res.send("Recipe added to favorites");
 
+});
+
+apiRouter.delete('/recipes', verifyAuth, async (req, res) => {
+    //delete all recipes from the user's favorites
+    const user = await findUser('token', req.cookies[authCookieName]);
+    delete favoriteRecipes[user.email];
+    res.send("Favorites cleared");
 });
 
 // Default error handler

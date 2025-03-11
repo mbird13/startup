@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import './results.css';
 import { useNavigate } from 'react-router-dom';
 
-export function Results() {
+export function Results({userName}) {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const meal = searchParams.get("meal");
@@ -37,12 +37,22 @@ export function Results() {
         }
     }, []);
 
-    function addToFavorites() {
-        const json = localStorage.getItem("favorites") || "[]";
-        const currentFavorites = JSON.parse(json);
-        const recipe = { name: recipeName, image: imgUrl, instructions: instructions };
-        localStorage.setItem("favorites", JSON.stringify([...currentFavorites, recipe]));
-        navigate("/favorites");
+    async function addToFavorites() {
+        event.preventDefault();
+        const response = await fetch("/api/recipe", {
+            method: "post",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({userId: userName, name: recipeName, image: imgUrl, instructions: instructions})
+        })
+        if (response?.status === 200) {
+            // const json = localStorage.getItem("favorites") || "[]";
+            // const currentFavorites = JSON.parse(json);
+            // const recipe = { name: recipeName, image: imgUrl, instructions: instructions };
+            // localStorage.setItem("favorites", JSON.stringify([...currentFavorites, recipe]));
+            navigate("/favorites");
+        } else {
+            alert("Failed to add recipe to favorites. Try again later.");
+        }
     }
     
     return (

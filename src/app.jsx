@@ -40,9 +40,9 @@ export default function App() {
                             }}
                         />} 
                     />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/favorites" element={<Favorites />} />
-                    <Route path="/results" element={<Results />} />
+                    <Route path="/home" element={<Home userName={userName} />} />
+                    <Route path="/favorites" element={<Favorites userName={userName} />} />
+                    <Route path="/results" element={<Results userName={userName} />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
 

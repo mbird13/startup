@@ -2,10 +2,13 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 import './favorites.css';
 
-export function Favorites() {
+export function Favorites({userName}) {
     const navigate = useNavigate();
-    const json = localStorage.getItem("favorites") || "[]";
-    const favorites = JSON.parse(json);
+    
+    //const json = localStorage.getItem("favorites") || "[]";
+
+    //let favorites = JSON.parse(json); //useState();
+    const [favorites, setFavorites] = React.useState([]);
 
     function createFavoritesList() {
         const favoritesArray = [];
@@ -30,9 +33,32 @@ export function Favorites() {
       }
 
       function clearFavorites() {
-        localStorage.setItem("favorites", "[]");
-        navigate("/favorites");
+        //localStorage.setItem("favorites", "[]");
+        fetch("/api/recipes", {
+          method: "delete"
+        }).then(response => {
+          if (response.status === 200) {
+            setFavorites([]);
+          }
+          else {
+            alert("Failed to clear favorites. Try again later.");
+          }
+        });
+        //navigate("/favorites");
       }
+
+      // React.useEffect(() => {
+      // }, [favorites]);
+
+      React.useEffect(() => {
+        fetch("/api/recipes", { //localStorage.getItem("favorites") || "[]";
+          method: "get",
+          headers: { "Content-Type": "application/json" }
+        }).then(response => response.json())
+        .then(newfavorites => {
+          setFavorites(newfavorites);
+        });
+      }, []);
 
     return (
         <main className="favorites_main">
