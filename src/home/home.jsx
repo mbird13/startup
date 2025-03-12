@@ -53,17 +53,18 @@ export function Home() {
       };
 
       function searchForRecipe() {
+        event.preventDefault();
         if (mealType === '') {
           alert("Please select a meal type");
           return;
         }
-        navigate("/results?meal={mealType}&allergies={allergies}")
+        navigate("/results?meal=" + mealType);
       }
 
     return (
         <main className="home_main">
         <div>
-            <form method="get" className="input-form">
+            <form className="input-form">
                 <h2>What's your next meal?</h2>
                     <label><input type="radio" name="meal" value="Breakfast" onChange={(e) => setMealType(e.target.value)}/>Breakfast</label>
                     <label><input type="radio" name="meal" value="Dinner" onChange={(e) => setMealType(e.target.value)}/>Dinner/Lunch</label>
