@@ -40,3 +40,9 @@ I learned how to implement reactivity in React. Throughout this process, I used 
 useNavigate(): can navigate to a given path within a function.   
 searchParams(): can use parameters in the url path to pass information from one page to another.
 
+## Service deliverable
+I developed a backend HTTP service using Node.js and Express to handle requests for the application. The backend is powered by an index.js file that initializes and runs the Express server. To serve frontend assets, I implemented static middleware to pull content from the public directory. I integrated calls to third-party APIs to fetch recipe data for the results page. The backend includes service endpoints for user login/logout and managing favorite recipes, allowing users to add, retrieve, and remove their saved recipes.
+
+event.preventDefault(): needed to stop buttons from making a GET request and breaking React.
+.json(): converts json to a javascript object
+
