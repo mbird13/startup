@@ -22,8 +22,10 @@ export default function App() {
                             <li><NavLink to="/">
                                 {authState === AuthState.Authenticated ? 'Logout: ' + userName : 'Login'} 
                             </NavLink></li>
-                            <li><NavLink to="/home">Home</NavLink></li>
-                            <li><NavLink to="/favorites">Favorites</NavLink></li>
+                            {authState === AuthState.Authenticated ? 
+                            <li><NavLink to="/home">Home</NavLink></li> : null}
+                            {authState === AuthState.Authenticated ? 
+                            <li><NavLink to="/favorites">Favorites</NavLink></li> : null}
                         </menu>
                     </nav>
                     <hr />
