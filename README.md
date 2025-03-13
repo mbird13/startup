@@ -96,11 +96,11 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
+- [x] **Node.js/Express HTTP service** - I created an index.js file to run an express app for the backend.
+- [x] **Static middleware for frontend** - I added static middleware to pull from the public directory.
+- [x] **Calls to third party endpoints** - I call themealdb.com/api.php to get recipes for the results page.
+- [x] **Backend service endpoints** - Endpoints for login/logout and for adding, getting, and deleting favorite recipes.
+- [x] **Frontend calls service endpoints** - The frontend service calls endpoints for login/logout and for adding, getting, and deleting favorite recipes.  These recipes are only visible to the user that favorited them. 
 
 ## 🚀 DB/Login deliverable
 
