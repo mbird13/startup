@@ -2,12 +2,14 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
+const DB = require('./database.js');
+
 const app = express();
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 const authCookieName = 'token';
 
-let users = [];
+//let users = [];
 let favoriteRecipes = [];
 
 app.use(express.json());
@@ -21,7 +23,7 @@ app.use(`/api`, apiRouter);
 
 const verifyAuth = async (req, res, next) => {
     // check if the user is authenticated
-    const user = await findUser('token', req.cookies[authCookieName]);
+    const user = await DB.getUserByToken(req.cookies[authCookieName]); //findUser('token', req.cookies[authCookieName]);
     if (user) {
         next();
     } else {
@@ -30,7 +32,7 @@ const verifyAuth = async (req, res, next) => {
 };
 
 apiRouter.post('/auth/create', async (req, res) => {
-    if (await findUser('email', req.body.email)) {
+    if (await DB.getUser(req.body.email)) { //findUser('email', req.body.email)) {
       res.status(409).send({ msg: 'Existing user' });
     } else {
       const user = await createUser(req.body.email, req.body.password);
@@ -41,10 +43,11 @@ apiRouter.post('/auth/create', async (req, res) => {
   });
 
 apiRouter.post('/auth/login', async (req, res) => {
-const user = await findUser('email', req.body.email);
+const user = await DB.getUser(req.body.email); //findUser('email', req.body.email);
 if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
     user.token = uuid.v4();
+    DB.updateUser(user);
     setAuthCookie(res, user.token);
     res.send({ email: user.email });
     return;
@@ -54,33 +57,36 @@ res.status(401).send({ msg: 'Unauthorized' });
 });
 
 apiRouter.delete('/auth/logout', async (req, res) => {
-    const user = await findUser('token', req.cookies[authCookieName]);
+    const user = await DB.getUserByToken(req.cookies[authCookieName]); //findUser('token', req.cookies[authCookieName]);
     if (user) {
-        delete user.token;
+        await DB.removeToken(user);
     }
     res.clearCookie(authCookieName);
     res.status(204).end();
 }); 
 
 apiRouter.get('/recipes', verifyAuth, async (req, res) => {
-    const user = await findUser('token', req.cookies[authCookieName]);
-    res.send(favoriteRecipes[user.email] || []);
+    const user = await DB.getUserByToken(req.cookies[authCookieName]); //findUser('token', req.cookies[authCookieName]);
+    const favorites = await DB.getFavorites(user.email) || [];
+    res.send(favorites);//favoriteRecipes[user.email] || []);
 });
 
 apiRouter.post('/recipe', verifyAuth, (req, res) => {
     //add a recipe to the user's favorites
     let newRecipe = { userId: req.body.userId, name: req.body.name, image: req.body.image, instructions: req.body.instructions };
-    currentFavorites = favoriteRecipes[req.body.userId] || [];
-    currentFavorites.push(newRecipe);
-    favoriteRecipes[req.body.userId] = currentFavorites;
+    //currentFavorites = favoriteRecipes[req.body.userId] || [];
+    DB.addFavorite(newRecipe);
+    //currentFavorites.push(newRecipe);
+    //favoriteRecipes[req.body.userId] = currentFavorites;
     res.send("Recipe added to favorites");
 
 });
 
 apiRouter.delete('/recipes', verifyAuth, async (req, res) => {
     //delete all recipes from the user's favorites
-    const user = await findUser('token', req.cookies[authCookieName]);
-    delete favoriteRecipes[user.email];
+    const user = await DB.getUserByToken(req.cookies[authCookieName]); //findUser('token', req.cookies[authCookieName]);
+    DB.clearFavorites(user.email);
+    //delete favoriteRecipes[user.email];
     res.send("Favorites cleared");
 });
 
@@ -97,7 +103,8 @@ async function createUser(email, password) {
       password: passwordHash,
       token: uuid.v4(),
     };
-    users.push(user);
+    DB.addUser(user);
+    //users.push(user);
   
     return user;
   }

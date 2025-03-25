@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongo');
+const { MongoClient } = require('mongodb');
 const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
@@ -32,27 +32,37 @@ const recipeCollection = db.collection('favorites');
   async function updateUser(user) {
     await userCollection.updateOne({ email: user.email }, { $set: user });
   }
+
+  async function removeToken(user) {
+    await userCollection.updateOne(
+        { email: user.email },
+        { $unset: { token: "" } }
+    );
+}
   
-  async function addScore(score) {
-    return scoreCollection.insertOne(score);
+  async function addFavorite(recipe) {
+    return recipeCollection.insertOne(recipe);
   }
   
-  function getHighScores() {
-    const query = { score: { $gt: 0, $lt: 900 } };
-    const options = {
-      sort: { score: -1 },
-      limit: 10,
-    };
-    const cursor = scoreCollection.find(query, options);
+  function getFavorites(userId) {
+    const query = { userId: userId };
+    const cursor = recipeCollection.find(query);
     return cursor.toArray();
   }
+
+   async function clearFavorites(userId) {
+    const result = await recipeCollection.deleteMany({ userId: userId });
+    return result;
+   }
   
   module.exports = {
     getUser,
     getUserByToken,
     addUser,
     updateUser,
-    addScore,
-    getHighScores,
+    addFavorite,
+    getFavorites,
+    clearFavorites,
+    removeToken
   };
   
