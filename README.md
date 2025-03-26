@@ -107,7 +107,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [x] **User registration** - User information is stored in the databased when they register. 
-- [ ] **User login and logout** - I did not complete this part of the deliverable.
+- [x] **User login and logout** - User login and logout updates information in the database. 
 - [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
 - [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
 - [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.
