@@ -108,8 +108,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [x] **User registration** - User information is stored in the databased when they register. 
 - [x] **User login and logout** - User login and logout updates information in the database. 
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
+- [x] **Stores data in MongoDB** - Usernames, hashed passwords, auth tokens, and favorite recipes are stored in the database. 
+- [x] **Stores credentials in MongoDB** - Usernames, hashed passwords, auth tokens are stored in the database. 
 - [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.
 
 ## 🚀 WebSocket deliverable
