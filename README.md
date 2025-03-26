@@ -110,7 +110,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **User login and logout** - User login and logout updates information in the database. 
 - [x] **Stores data in MongoDB** - Usernames, hashed passwords, auth tokens, and favorite recipes are stored in the database. 
 - [x] **Stores credentials in MongoDB** - Usernames, hashed passwords, auth tokens are stored in the database. 
-- [ ] **Restricts functionality based on authentication** - I did not complete this part of the deliverable.
+- [x] **Restricts functionality based on authentication** - Recipes cannot be added to favorites or retrieved from favorites list without authentication. 
 
 ## 🚀 WebSocket deliverable
 
