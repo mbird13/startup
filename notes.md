@@ -46,3 +46,5 @@ I developed a backend HTTP service using Node.js and Express to handle requests 
 event.preventDefault(): needed to stop buttons from making a GET request and breaking React.  
 .json(): converts json to a javascript object
 
+## MongoDB Deliverable
+For this deliverable, I modified the backend service to no longer store the user information and favorite recipes in memory. In order to do this, I had to create a mongo database and configure it to be accessible through my service. I learned about the mongodb npm package and how to use it to easily store and retrieve javascript objects in the database. 
