@@ -30,7 +30,12 @@ export function Home() {
       function createMessageArray() {
         const messageArray = [];
         for (const [i, event] of notifications.entries()) {
-          let message = `favorited ${event.value}`;
+          let message;
+          if (event.value == 'logged in' || event.value == 'disconnected') {
+            message = `${event.from} ${event.value}`;
+          } else {
+            message = `${event.from} is cooking ${event.value}`;
+          }
     
           messageArray.push(
             <li>{event.from.split('@')[0]} {message}</li>
