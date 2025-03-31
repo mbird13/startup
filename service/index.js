@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
 const DB = require('./database.js');
+ const { createWebSocketServer } = require('./websocket.js');
+
 
 const app = express();
 
@@ -126,4 +128,6 @@ async function createUser(email, password) {
   
 
 
-app.listen(port);
+const httpService = app.listen(port);
+createWebSocketServer(httpService);
+
