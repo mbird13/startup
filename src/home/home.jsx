@@ -4,15 +4,17 @@ import { useNavigate } from 'react-router-dom';
 
 import './home.css';
 
-export function Home() {  
+export function Home({ userName }) {  
     
     const [notifications, setNotifications] = React.useState([]);
     const navigate = useNavigate();
 
     React.useEffect(() => {
         MyNotifier.addHandler(handleNotification);
+        MyNotifier.sendNotification(userName, 'logged in');
     
         return () => {
+          MyNotifier.sendNotification(userName, 'disconnected');
           MyNotifier.removeHandler(handleNotification);
         };
       }, []);
@@ -53,6 +55,7 @@ export function Home() {
           alert("Please select a meal type");
           return;
         }
+        MyNotifier.sendNotification(userName, mealType);
         navigate("/results?meal=" + mealType);
       }
 
