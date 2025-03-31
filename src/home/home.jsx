@@ -40,17 +40,7 @@ export function Home() {
       }
 
       const [mealType, setMealType] = React.useState('');
-      const [allergies, setAllergies] = React.useState([]);
 
-      const handleCheckboxChange = (event) => {
-        const { value, checked } = event.target;
-    
-        setAllergies((prevAllergies) =>
-          checked
-            ? [...prevAllergies, value] // Add allergy if checked
-            : prevAllergies.filter((allergy) => allergy !== value) // Remove allergy if unchecked
-        );
-      };
 
       function searchForRecipe() {
         event.preventDefault();
@@ -72,34 +62,6 @@ export function Home() {
                     <label><input type="radio" name="meal" value="Vegan" onChange={(e) => setMealType(e.target.value)}/>Vegan</label>
                     <label><input type="radio" name="meal" value="Vegetarian" onChange={(e) => setMealType(e.target.value)}/>Vegetarian</label>  
                 <br />
-                {/* <h2>Select Allegies</h2>
-                    <label>
-                        <input
-                        type="checkbox"
-                        value="NoSeafood"
-                        checked={allergies.includes("NoSeafood")}
-                        onChange={handleCheckboxChange}
-                        />
-                        Allergic to Seafood
-                    </label>
-                    <label>
-                        <input
-                        type="checkbox"
-                        value="NoNuts"
-                        checked={allergies.includes("NoNuts")}
-                        onChange={handleCheckboxChange}
-                        />
-                        Allergic to Nuts
-                    </label>
-                    <label>
-                        <input
-                        type="checkbox"
-                        value="NoEgg"
-                        checked={allergies.includes("NoEgg")}
-                        onChange={handleCheckboxChange}
-                        />
-                        Allergic to Eggs
-                    </label> */}
                 <br />
                 <br />
                 <button onClick={() => searchForRecipe()}>Search</button>
