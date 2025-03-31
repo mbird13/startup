@@ -14,9 +14,12 @@ class Notifier {
         this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
         this.socket.onopen = (event) => {
             this.recieveNotification(new Notification(username, 'logged in'));
+            this.sendNotification(new Notification(username, 'logged in'));
         };
         this.socket.onclose = (event) => {
             this.recieveNotification(new Notification(username, 'disconnected'));
+            this.sendNotification(new Notification(username, 'logged in'));
+
         };
         this.socket.onmessage = async (msg) => {
         try {
@@ -32,9 +35,8 @@ class Notifier {
         // }, 5000);
     }
 
-    sendNotification(from, value) {
-        const event = new Notification(from, value);
-        this.receiveNotification(event);
+    sendNotification(event) {
+        this.socket.send(JSON.stringify(event));
       }
 
     receiveNotification(event) {
