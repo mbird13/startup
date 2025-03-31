@@ -8,13 +8,28 @@ class Notification {
 class Notifier {
     handlers = []
 
-    constructor() {
-        setInterval(() => {
-            const user = 'James';
-            const value = 'Drunken Noodles';
-            this.sendNotification('James', 'Drunken Noodles');
+    constructor(username) {
+        let port = window.location.port;
+        const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+        this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+        this.socket.onopen = (event) => {
+        this.sendNotification(new Notification(username, 'logged in'));
+        };
+        this.socket.onclose = (event) => {
+        this.sendNotification(new Notification(username, 'disconnected'));
+        };
+        this.socket.onmessage = async (msg) => {
+        try {
+            const event = JSON.parse(await msg.data.text());
+            this.receiveEvent(event);
+        } catch {}
+        };
+        // setInterval(() => {
+        //     const user = 'James';
+        //     const value = 'Drunken Noodles';
+        //     this.sendNotification('James', 'Drunken Noodles');
 
-        }, 5000);
+        // }, 5000);
     }
 
     sendNotification(from, value) {
