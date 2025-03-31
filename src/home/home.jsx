@@ -11,10 +11,8 @@ export function Home({ userName }) {
 
     React.useEffect(() => {
         MyNotifier.addHandler(handleNotification);
-        MyNotifier.sendNotification(userName, 'logged in');
     
         return () => {
-          MyNotifier.sendNotification(userName, 'disconnected');
           MyNotifier.removeHandler(handleNotification);
         };
       }, []);
@@ -40,7 +38,7 @@ export function Home({ userName }) {
           }
     
           messageArray.push(
-            <li>{event.from.split('@')[0]} {message}</li>
+            <li>{message}</li>
           );
         }
         return messageArray;
