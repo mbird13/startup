@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import './home.css';
 
+const prompts = [" is cooking ", " is looking for ", " is eating ", " is preparing ", " is enjoying "];
+
+
 export function Home({ userName }) {  
     
     const [notifications, setNotifications] = React.useState([]);
@@ -34,7 +37,7 @@ export function Home({ userName }) {
           if (event.value == 'logged in' || event.value == 'disconnected') {
             message = `${event.from} ${event.value}`;
           } else {
-            message = `${event.from} is cooking ${event.value}`;
+            message = `${event.from} ${prompts[Math.floor(Math.random() * 5)]} ${event.value}`;
           }
     
           messageArray.push(
