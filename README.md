@@ -120,4 +120,5 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Frontend makes WebSocket connection** - Refactored Notifier.js to establish websocket connection. 
 - [x] **Data sent over WebSocket connection** - When a recipe is searched, a message is sent to all connected clients.
 - [x] **WebSocket data displayed** - Recieved messages are displayed on the home page.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [x] **Application is fully functional** - Done
+- [ ] 
