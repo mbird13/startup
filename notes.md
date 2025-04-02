@@ -48,3 +48,6 @@ event.preventDefault(): needed to stop buttons from making a GET request and bre
 
 ## MongoDB Deliverable
 For this deliverable, I modified the backend service to no longer store the user information and favorite recipes in memory. In order to do this, I had to create a mongo database and configure it to be accessible through my service. I learned about the mongodb npm package and how to use it to easily store and retrieve javascript objects in the database. 
+
+## Websocket Deliverable
+For this deliverable, I had to modify both the frontend and the backend to establish and handle websocket connections. The backend recieves connections and manages sending incoming data to all open connections. The frontend requests the connection, sends data when a recipe is searched, and displays the messages that are recieved from the backend in the notifications bar. 
