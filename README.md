@@ -121,4 +121,3 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Data sent over WebSocket connection** - When a recipe is searched, a message is sent to all connected clients.
 - [x] **WebSocket data displayed** - Recieved messages are displayed on the home page.
 - [x] **Application is fully functional** - Done
-- [ ] 
